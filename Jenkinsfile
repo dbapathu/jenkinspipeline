@@ -8,13 +8,9 @@ pipeline {
    agent  any
     stages {
         stage('checkout') {
-            steps {
-                 script{
-                        {
+            steps       {
                             git "https://github.com/dbapathu/jenkinspipeline.git"
                         }
                     }
                 }
             }
-    }
-}
