@@ -7,6 +7,6 @@ resource "aws_instance" "jenkinstfansible" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "jenkinstfansible"
+    Name = "jenkinstfansibleec2"
   }
 }
