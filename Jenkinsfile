@@ -10,7 +10,6 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("terraform")
                         {
                             git "https://github.com/dbapathu/jenkinspipeline.git"
                         }
