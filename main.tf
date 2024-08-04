@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "jenkinstfansible" {
-  ami           = "ami-04a81a99f5ec58529"
+  ami           = "ami-0875345809c54b79e"
   instance_type = "t2.micro"
 
   tags = {
