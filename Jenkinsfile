@@ -1,22 +1,33 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'building the application...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'testing the application'
-            }
-        }
-        stage('Deploy') {
-            steps {
-               echo 'deploying the application'
-            }
-        }
+    environment {
+        AWS_DEFAULT_REGION = 'us-east-1'
     }
-}
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Terraform Init') {
+            steps {
+                script {
+                    sh 'terraform init'
+                }
+            }
+        }
+        stage('Terraform Plan') {
+            steps {
+                script {
+                    sh 'terraform plan -out=tfplan'
+                }
+            }
+        }
+        stage('Terraform Apply') {
+            steps {
+                script {
+                    sh 'terraform apply -auto-approve tfplan'
+                }
+            }
+        }
 
