@@ -3,4 +3,4 @@
   become: true
   tasks: 
     - name: Install demo app
-      apt: name=git state=present
+      apt: name=git state=absent
