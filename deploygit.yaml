@@ -1,0 +1,6 @@
+---
+- hosts: server1
+  become: true
+  tasks: 
+    - name: Install demo app
+      apt: name=git state=present
