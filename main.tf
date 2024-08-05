@@ -12,7 +12,7 @@ resource "aws_instance" "jenkinstfansible" {
   }
 }
 resource "aws_key_pair" "TF_keywin" {
-  key_name   = "TF_key"
+  key_name   = "TF_keywin"
   public_key = tls_private_key.rsa.public_key_openssh
 }
 
