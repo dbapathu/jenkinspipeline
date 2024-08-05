@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "jenkinstfansible" {
-  ami           = "ami-0875345809c54b79e"
+  ami           = "ami-04a81a99f5ec58529"
   instance_type = "t2.micro"
   key_name = "TF_key"
 
